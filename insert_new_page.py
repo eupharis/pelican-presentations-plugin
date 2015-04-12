@@ -59,8 +59,6 @@ def main():
 
     (options, args) = parser.parse_args()
 
-    print options
-    print args
     if len(args) == 0:
         parser.error("Page number to insert new page at not given.")
         return
