@@ -1,0 +1,16 @@
+{% extends "default.html" %}
+{% block extra_css %}
+{% endblock %}
+{% block title %}
+    Presentations | {{ SITENAME }}
+{% endblock %}
+{% block content %}
+
+<h1>Presentations</h1>
+
+<ul>
+{% for p in presentation_first_pages %}
+<li><a href="/presentations/{{ p.slug }}/">{{ p.title }} </a>({{ p.date.strftime('%Y-%m-%d') }})</li>
+{% endfor %}
+</ul>
+{% endblock content %}

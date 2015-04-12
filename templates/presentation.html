@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}
+{{ presentation.title }} |
+{% if presentation.page != 0 %}
+{{ presentation.page }} |
+{% endif %}
+{{ SITENAME }}
+{% endblock title %}
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="/{{ THEME_STATIC_DIR }}/css/presentation.css" />
+    <link rel="stylesheet" type="text/css" href="/{{ THEME_STATIC_DIR }}/css/pygment.min.css" />
+{% endblock %}
+
+{% block body %}
+
+<div class="presentation_nav">
+    <div class="cf">
+        <a href="/" class="prev">
+            <img class="noborder"
+                style="width: 30px;"
+                src="/t/img/favicon.png" alt="Highwater Labs Logo">
+        </a>
+        <a href="/presentations/"
+            style="font-size: 14px; padding-top: 8px;"
+            class="next">
+            Presentations
+        </a>
+    </div>
+    <div class="cf">
+    {% if presentation.prev_page %}
+    <a href="/{{ presentation.prev_page }}" class="btn btn-primary prev">
+        Prev
+    </a>
+    {% endif %}
+    {% if presentation.next_page %}
+    <a href="/{{ presentation.next_page }}" class="btn btn-primary next">
+        Next
+    </a>
+    {% endif %}
+    </div>
+</div>
+
+<div class="presentation_content">
+    {{ presentation.content }}
+</div>
+
+{% endblock %}
