@@ -2,6 +2,8 @@
 import os
 from optparse import OptionParser
 
+# this script will insert a page and renumber all subsequent pages
+
 
 def sort_page(page):
     p = page.split('.')[0]
