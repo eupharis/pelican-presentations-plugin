@@ -113,7 +113,7 @@ class PresentationPageGenerator(Generator):
 
         presentations_by_slug = self.get_presentations_by_slug(presentations)
 
-        for slug, pages in presentations_by_slug.iteritems():
+        for slug, pages in presentations_by_slug.items():
             for idx, p in enumerate(pages):
                 prev_page = p.page - 1
                 next_page = p.page + 1
